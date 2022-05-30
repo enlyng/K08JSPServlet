@@ -70,6 +70,7 @@ public class JDBConnect {
 			String url = application.getInitParameter("OracleURL");
 			String id = application.getInitParameter("OracleId");
 			String pwd = application.getInitParameter("OraclePwd");
+			con = DriverManager.getConnection(url, id, pwd);
 			System.out.println("DB 연결 성공(인수 생성자 2)");
 		}
 		catch(Exception e) {
