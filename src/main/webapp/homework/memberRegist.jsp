@@ -104,7 +104,12 @@
     	}
     }
     function idCheck(form){
-    	alert("아이디 중복체크는 하지않습니다.");
+    	
+    	if(form.idchecking.value != "idCheck"){
+		   	alert("아이디 중복체크를 해주세요");
+		   	return false;
+    	}
+    	
     }
     function inputEmail(form){
     	
@@ -122,6 +127,7 @@
     		document.getElementsByName(nextObj)[0].focus();
     	}
     }
+    function 
     </script>
 </head>
 <body>
@@ -138,7 +144,8 @@
                 <td><span class="red">*</span> 아이디</td>
                 <td>
                     <input type="text" class="w01" name="userid" value="" />       
-                    <button type="button" onclick="idCheck(this.form);">중복확인</button>             
+                    <button type="button" onclick="idCheck(this.form);">중복확인</button>      
+                    <input type="hidden" name="idchecking" value="idUncheck" />       
                 </td>
             </tr>
             <tr>

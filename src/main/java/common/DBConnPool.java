@@ -29,7 +29,7 @@ public class DBConnPool {
 			//1.Context객체를 생성한다.
 			Context initCtx = new InitialContext();
 			/*2. 앞에서 생ㅅㅇ한 객체를 통해 JNDI 서비스 구조의 초기 Root디렉토리를
-			얻어온다. 여기서 얻어오는 톰켓의 루트 ㅣ렉토리명은 java:comp/env로 이미
+			얻어온다. 여기서 얻어오는 톰켓의 루트 디렉토리명은 java:comp/env로 이미
 			정해져 있으므로 그대로 사용하면 된다.
 			*/
 			Context ctx = (Context)initCtx.lookup("java:comp/env");

@@ -63,6 +63,7 @@ public class JDBConnect {
 			e.printStackTrace();
 		}
 	}
+	//인자 생성자 2
 	public JDBConnect(ServletContext application) {
 		try { 
 			String driver = application.getInitParameter("OracleDriver");

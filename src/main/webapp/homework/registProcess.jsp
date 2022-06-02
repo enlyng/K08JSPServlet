@@ -53,3 +53,4 @@ if(iresult==1){
 //DB작업이 끝나면 자원 해제
 dao.close();
 %>
+
