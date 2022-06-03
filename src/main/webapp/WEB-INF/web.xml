@@ -96,4 +96,13 @@
 <param-value>5</param-value>
 </context-param>
 
+<servlet>
+<servlet-name>HelloServlet</servlet-name>
+<servlet-class>servlet.HelloServlet</servlet-class>
+</servlet>
+<servlet-mapping>
+<servlet-name>HelloServlet</servlet-name>
+<url-pattern>/13Servlet/HelloServlet.do</url-pattern>
+</servlet-mapping>
+
 </web-app>
