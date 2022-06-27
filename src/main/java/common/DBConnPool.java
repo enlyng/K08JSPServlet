@@ -17,7 +17,7 @@ public class DBConnPool {
 	/*
 	JNDI(JAva Naming and Directory Interface)
 	   : 디렉토리 서비스에서 제공하는 데이터 및 객체를 찾아서 참고(lookup)하는
-	   API로 쉽게 말하면 외부에 있는 객체를 이름으로 찾아오기 위한 기수링다.
+	   API로 쉽게 말하면 외부에 있는 객체를 이름으로 찾아오기 위한 기술이다.
 	
 	DBCP(DataBase Connection Pool : 커넥션 풀)
 		: DB와 연결된 커넥션 객체를 미리 만들어 풀(pool)에 저장해 뒀다가

@@ -57,7 +57,7 @@ public class BoardPage {
 		
 		//다음 페이지 블록 바로가기 링크 출력
 		if(pageTemp <= totalPages) {
-			pagingStr += "<a href='" + reqUrl + "?pageNum=" + (pageTemp -1) + "'>[다음블록]</a>";
+			pagingStr += "<a href='" + reqUrl + "?pageNum=" + pageTemp + "'>[다음블록]</a>";
 			pagingStr += "&nbsp;";
 			pagingStr += "<a href='" + reqUrl + "?pageNum=" + totalPages + "'>[마지막 페이지]</a>";
 		}

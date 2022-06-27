@@ -80,4 +80,52 @@ public class MembershipDAO extends JDBConnect {
 		
 		return dto;
 	}
+	// idValidate1
+	public MembershipDTO idValidate(String uid) {
+		
+		MembershipDTO dto = new MembershipDTO();
+		
+		String query = "select id from membership where id = ?";
+		
+		try {
+			psmt = con.prepareStatement(query);
+			psmt.setString(1, uid);
+			rs = psmt.executeQuery();
+			
+			if(rs.next()) {
+				dto.setId(rs.getString("id"));
+			}
+			
+		} catch (Exception e) {
+			System.out.println("아이디 중복 확인 중 오류 발생");
+			e.printStackTrace();
+		}
+		
+		return dto;
+	}
+	// idValidate2
+	public int idValidate2(String uid) {
+		
+		int result = 0;
+		
+		String query = "select id from membership where id = ?";
+		
+		try {
+			psmt = con.prepareStatement(query);
+			psmt.setString(1, uid);
+			rs = psmt.executeQuery();
+			
+			if(rs.next()) {
+				result = 1;
+			} else {
+				result = 2;
+			}
+			
+		} catch (Exception e) {
+			System.out.println("아이디 중복 확인 중 오류 발생");
+			e.printStackTrace();
+		}
+		
+		return result;
+	}
 }

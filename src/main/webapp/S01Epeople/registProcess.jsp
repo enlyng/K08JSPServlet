@@ -5,7 +5,7 @@
     pageEncoding="UTF-8"%>
 <%
 //회원가입 페이지에서 사용자가 입력한 회원정보 받기
-String userId = request.getParameter("userid");
+String userId = request.getParameter("user_id");
 String userPwd = request.getParameter("pass2");
 String userName = request.getParameter("name");
 String userGender = request.getParameter("gender");
@@ -19,12 +19,8 @@ if(request.getParameter("tel1") != "" && request.getParameter("tel2") != "" && r
 	userTel = request.getParameter("tel1")+"-"+request.getParameter("tel2")+"-"+request.getParameter("te13");
 }
 
-
-//application내장 객체를 통해 web.xml에 입력된 DB접속정보를 읽어옴.
-String oracleDriver = application.getInitParameter("OracleDriver");
-String oracleURL = application.getInitParameter("OracleURL");
-String oracleId = application.getInitParameter("OracleId");
-String oraclePwd = application.getInitParameter("OraclePwd");
+//DAO객체를 통해 DB에 저장
+MembershipDAO dao = new MembershipDAO(application);
 
 //폼값 저장
 MembershipDTO dto = new MembershipDTO();
@@ -40,8 +36,6 @@ dto.setMobile(userMob);
 dto.setTel(userTel);
 
 
-//DAO객체를 통해 DB에 저장
-MembershipDAO dao = new MembershipDAO(application);
 int iresult = dao.memberInsert(dto);
 if(iresult==1){
 	JSFunction.alertLocation("가입성공", "memberLogin.jsp", out);
